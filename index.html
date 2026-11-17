@@ -1,23 +1,94 @@
 <!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#100812"><meta name="description" content="VIP da Nicolly — planos e acesso exclusivo para maiores de 18 anos.">
-<title>VIP da Nicolly ❤️</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">♥</span><span>VIP <b>DA NICOLLY</b></span></a><nav><a href="#planos">Planos</a><a href="#como-funciona">Como funciona</a><a href="#duvidas">Dúvidas</a><button class="btn btn-small" data-open="client-login">Minha conta</button></nav></header>
-<main>
-<section class="hero"><div class="hero-copy"><span class="eyebrow">UM ESPAÇO EXCLUSIVO</span><h1>Seu acesso especial começa <em>aqui.</em></h1><p id="hero-text">Um espaço exclusivo, íntimo e dedicado para quem deseja acompanhar conteúdos especiais e novidades.</p><div class="hero-actions"><a class="btn" href="#planos">Conhecer os planos <span>→</span></a><button class="btn btn-outline" data-open="client-register">Criar minha conta</button></div><div class="trust"><span>✓ Pagamento pela plataforma Mercado Pago</span><span>✓ Acesso para maiores de 18 anos</span></div></div><div class="hero-art"><div class="orb"></div><div class="hero-card"><div class="heart-big">♥</div><span>VIP EXPERIENCE</span><strong>Um mundo mais<br>perto de você.</strong><small>ACESSO EXCLUSIVO</small></div><div class="floating f1">✦ Conteúdo especial</div><div class="floating f2">♡ Área de membros</div></div></section>
-<section class="section" id="planos"><div class="section-heading"><span class="eyebrow">ESCOLHA O SEU ACESSO</span><h2>Planos VIP</h2><p>Escolha a opção que combina com você.</p></div><div class="plans" id="plans"></div></section>
-<section class="steps-section" id="como-funciona"><div class="section-heading"><span class="eyebrow">SIMPLES E TRANSPARENTE</span><h2>Como funciona</h2></div><div class="steps"><article><i>01</i><h3>Crie sua conta</h3><p>Informe seus dados básicos para acompanhar seu acesso.</p></article><article><i>02</i><h3>Escolha seu plano</h3><p>Selecione o período que deseja contratar.</p></article><article><i>03</i><h3>Faça o pagamento</h3><p>Você será direcionado ao ambiente de pagamento do Mercado Pago.</p></article><article><i>04</i><h3>Confirme seu pagamento</h3><p>Envie o comprovante pelo canal indicado para conferência manual.</p></article></div></section>
-<section class="member-callout"><div><span class="eyebrow">JÁ É MEMBRO?</span><h2>Acesse sua área de cliente</h2><p>Consulte as informações da sua conta e os próximos passos para liberação.</p></div><button class="btn" data-open="client-login">Entrar na minha conta →</button></section>
-<section class="section faq" id="duvidas"><div class="section-heading"><span class="eyebrow">PRECISA DE AJUDA?</span><h2>Perguntas frequentes</h2></div><details><summary>Como recebo o acesso depois de pagar?</summary><p>Após pagar, envie o comprovante pelo WhatsApp para conferência. A liberação do convite é feita manualmente pelo responsável.</p></details><details><summary>O pagamento é feito pelo site?</summary><p>Não. O botão leva ao ambiente externo do Mercado Pago. Este site não solicita dados de cartão.</p></details><details><summary>O acesso é para qualquer idade?</summary><p>Não. O serviço é destinado exclusivamente a maiores de 18 anos. A confirmação exibida no site não substitui uma verificação formal de idade.</p></details></section>
-</main>
-<footer><b>VIP DA NICOLLY ♥</b><div><a href="termos.html">Termos de uso</a><a href="privacidade.html">Privacidade</a></div><small>Conteúdo destinado exclusivamente a maiores de 18 anos. © 2026</small></footer>
-<div class="modal" id="client-login"><div class="modal-card"><button class="x" data-close>×</button><span class="eyebrow">BEM-VINDO DE VOLTA</span><h2>Entrar na conta</h2><form id="login-form"><label>E-mail<input type="email" id="login-email" required autocomplete="email"></label><label>Senha<input type="password" id="login-password" required autocomplete="current-password"></label><button class="btn full">Entrar</button><p class="form-msg" id="login-msg"></p></form><p class="switch">Ainda não tem conta? <button class="text-btn" data-switch="client-register">Cadastre-se</button></p></div></div>
-<div class="modal" id="client-register"><div class="modal-card"><button class="x" data-close>×</button><span class="eyebrow">CRIE SEU ACESSO</span><h2>Cadastro de cliente</h2><form id="register-form"><label>Nome completo<input id="reg-name" required autocomplete="name"></label><label>Telefone / WhatsApp<input id="reg-phone" required inputmode="tel" placeholder="(00) 00000-0000"></label><label>E-mail<input id="reg-email" type="email" required autocomplete="email"></label><label>Data de nascimento<input id="reg-birth" type="date" required></label><label>Senha<input id="reg-password" type="password" minlength="8" required autocomplete="new-password"></label><label class="check"><input type="checkbox" required> Confirmo que tenho 18 anos ou mais e aceito os termos.</label><button class="btn full">Criar conta</button><p class="form-msg" id="register-msg"></p></form><p class="switch">Já tem conta? <button class="text-btn" data-switch="client-login">Entrar</button></p></div></div>
-<div class="modal" id="account-modal"><div class="modal-card"><button class="x" data-close>×</button><span class="eyebrow">ÁREA DO CLIENTE</span><h2 id="account-name">Minha conta</h2><div id="account-content"></div><button class="btn btn-outline full" id="client-logout">Sair da conta</button></div></div>
-<div class="age-gate" id="age-gate"><div class="age-card"><div class="age-symbol">18+</div><span class="eyebrow">ACESSO RESTRITO</span><h2>Você tem 18 anos ou mais?</h2><p>Este site é destinado exclusivamente a adultos. Ao continuar, você confirma ser maior de idade.</p><div class="age-actions"><button class="btn" id="age-yes">Sim, sou maior de 18</button><a class="btn btn-outline" href="https://www.google.com">Sair</a></div><small>Esta confirmação visual não é uma verificação legal de identidade ou idade.</small></div></div>
-<script src="app.js"></script>
-</body></html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIP da Nicolly — Área Exclusiva de Assinantes</title>
+    <meta
+      name="description"
+      content="Espaço exclusivo VIP da Nicolly com autenticação obrigatória, gestão de assinaturas, integração oficial Mercado Pago, envio de comprovantes, suporte e painel administrativo."
+    />
+    <meta property="og:title" content="VIP da Nicolly — Área Exclusiva de Assinantes" />
+    <meta
+      property="og:description"
+      content="Acesse conteúdos exclusivos da Nicolly com assinatura semanal, mensal ou vitalícia, pagamento oficial via Mercado Pago e liberação transparente."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0e0711" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="VIP Nicolly" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "VIP da Nicolly",
+            "applicationCategory": "LifestyleApplication",
+            "operatingSystem": "Web, Android",
+            "inLanguage": "pt-BR",
+            "description": "Plataforma oficial de assinaturas VIP da Nicolly com planos semanal, mensal e vitalício, pagamento via Mercado Pago e suporte dedicado.",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Plano Semanal VIP",
+                "price": "25.00",
+                "priceCurrency": "BRL"
+              },
+              {
+                "@type": "Offer",
+                "name": "Plano Mensal VIP",
+                "price": "50.00",
+                "priceCurrency": "BRL"
+              },
+              {
+                "@type": "Offer",
+                "name": "Plano Vitalício VIP",
+                "price": "200.00",
+                "priceCurrency": "BRL"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Como funciona o acesso ao VIP da Nicolly?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Após criar sua conta maior de 18 anos e escolher o plano Semanal, Mensal ou Vitalício, você realiza o pagamento pelo Mercado Pago e o servidor libera automaticamente seu acesso VIP após confirmação oficial ou validação do comprovante."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quanto tempo leva para liberar após o pagamento?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pagamentos confirmados automaticamente pelo Mercado Pago liberam o acesso em instantes. Caso envie comprovante manual, a conferência é feita pela equipe diretamente no painel."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[#0e0711] text-[#fff7fb] antialiased selection:bg-[#f06aa9]/30 selection:text-[#fff7fb]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

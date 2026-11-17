@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin | VIP da Nicolly</title>
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<!-- LOGIN -->
+<main id="login" class="box center">
+  <h1>🔒 Área dos administradores</h1>
+  <form id="login-form" autocomplete="off">
+    <label>Usuário<input id="u" type="text" autocapitalize="none" required></label>
+    <label>Senha<input id="p" type="password" inputmode="numeric" required></label>
+    <button class="btn" type="submit">Entrar</button>
+    <p id="login-msg" class="msg"></p>
+  </form>
+  <a class="back" href="./">← Voltar ao site</a>
+</main>
+
+<!-- PAINEL -->
+<div id="panel" hidden>
+  <header class="bar"><strong>⚙️ Painel Admin</strong><span><a href="./" target="_blank">Ver site</a> · <button id="logout" class="link">Sair</button></span></header>
+  <div class="wrap">
+
+    <section class="box">
+      <h2>1. Conexão com o GitHub <small>(uma vez só)</small></h2>
+      <p class="hint">Para o painel salvar as mudanças no site, ele precisa de um <b>token</b> do GitHub. Veja o passo a passo no fim da página. O token fica salvo só neste navegador.</p>
+      <div class="grid">
+        <label>Usuário do GitHub<input id="gh-owner" placeholder="seu-usuario"></label>
+        <label>Nome do repositório<input id="gh-repo" placeholder="nome-do-repo"></label>
+        <label>Branch<input id="gh-branch" value="main"></label>
+        <label>Token<input id="gh-token" type="password" placeholder="github_pat_..."></label>
+      </div>
+      <button class="btn" id="gh-save">Salvar conexão</button> <button class="btn ghost" id="gh-test">Testar</button>
+      <p id="gh-msg" class="msg"></p>
+    </section>
+
+    <section class="box">
+      <h2>2. Textos, preços e links</h2>
+      <label>Texto de apresentação<textarea id="f-hero" rows="3"></textarea></label>
+      <div class="grid">
+        <label>WhatsApp (só números, com 55)<input id="f-wa" inputmode="numeric"></label>
+        <label>WhatsApp como aparece<input id="f-wa-label"></label>
+      </div>
+      <label>Mensagem automática do WhatsApp<input id="f-msg"></label>
+      <h3>Planos</h3>
+      <div class="plan"><b>Semanal</b><input id="p-semanal-preco" placeholder="25,00"><input id="p-semanal-link" placeholder="link Mercado Pago"></div>
+      <div class="plan"><b>Mensal</b><input id="p-mensal-preco" placeholder="50,00"><input id="p-mensal-link" placeholder="link Mercado Pago"></div>
+      <div class="plan"><b>Vitalício</b><input id="p-vitalicio-preco" placeholder="200,00"><input id="p-vitalicio-link" placeholder="link Mercado Pago"></div>
+      <button class="btn" id="save-content">Salvar e publicar</button>
+      <p id="content-msg" class="msg"></p>
+    </section>
+
+    <section class="box">
+      <h2>3. Fotos</h2>
+      <div class="grid">
+        <div><h3>Banner (topo)</h3><img id="prev-banner" class="prev wide" alt=""><input type="file" id="file-banner" accept="image/*"><button class="btn" data-up="banner">Enviar banner</button> <button class="btn ghost" data-del="banner">Remover</button></div>
+        <div><h3>Foto de perfil</h3><img id="prev-perfil" class="prev round" alt=""><input type="file" id="file-perfil" accept="image/*"><button class="btn" data-up="perfil">Enviar foto</button> <button class="btn ghost" data-del="perfil">Remover</button></div>
+      </div>
+      <p id="img-msg" class="msg"></p>
+      <p class="hint">As fotos são ajustadas automaticamente (banner 1600x700, perfil 800x800). O site atualiza em 1 a 2 minutos.</p>
+    </section>
+
+    <section class="box">
+      <h2>Como criar o token (passo a passo)</h2>
+      <ol class="hint">
+        <li>Entre no GitHub → foto do perfil → <b>Settings</b> → <b>Developer settings</b> → <b>Personal access tokens</b> → <b>Fine-grained tokens</b> → <b>Generate new token</b>.</li>
+        <li>Em <b>Repository access</b> escolha <b>Only select repositories</b> e marque só o repositório do site.</li>
+        <li>Em <b>Permissions → Repository permissions</b> coloque <b>Contents: Read and write</b>.</li>
+        <li>Gere, copie o token e cole acima. Quem for administrar precisa do próprio token (ou você gera um para ela).</li>
+      </ol>
+    </section>
+  </div>
+</div>
+<script src="assets/js/admin.js"></script>
+</body>
+</html>

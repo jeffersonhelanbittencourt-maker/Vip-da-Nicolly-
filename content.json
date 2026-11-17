@@ -1,0 +1,12 @@
+{
+  "imgVersion": 1,
+  "hero": "Um espaço exclusivo, íntimo e dedicado para quem deseja acompanhar meus conteúdos especiais, bastidores diários e conversas diretas.",
+  "whatsapp": "554192387993",
+  "whatsappLabel": "(41) 9238-7993",
+  "mensagem": "Olá! Fiz o pagamento do meu plano VIP e gostaria de enviar o comprovante.",
+  "plans": {
+    "semanal":   { "preco": "25,00",  "link": "https://mpago.la/1QU2TPC" },
+    "mensal":    { "preco": "50,00",  "link": "https://mpago.la/1xxrBfv" },
+    "vitalicio": { "preco": "200,00", "link": "https://mpago.la/2PLqPsy" }
+  }
+}

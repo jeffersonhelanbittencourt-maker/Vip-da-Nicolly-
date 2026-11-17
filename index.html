@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VIP da Nicolly: acesso exclusivo ao grupo privado no WhatsApp. Escolha seu plano e pague com segurança pelo Mercado Pago. Conteúdo +18.">
+    <meta name="theme-color" content="#070205">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VIP DA NICOLLY ❤️ | Acesso Exclusivo">
+    <meta property="og:description" content="Grupo VIP privado no WhatsApp. Escolha seu plano e entre hoje.">
+    <meta property="og:image" content="assets/img/banner.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <title>VIP DA NICOLLY ❤️ | Acesso Exclusivo</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -37,37 +47,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #070205;
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-        .glow-bg {
-            position: absolute;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(236, 72, 153, 0.18) 0%, rgba(131, 24, 67, 0.06) 50%, transparent 75%);
-            z-index: 0;
-            pointer-events: none;
-            filter: blur(80px);
-        }
-        .glass-card {
-            background: rgba(22, 8, 18, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(236, 72, 153, 0.15);
-        }
-        .glass-card-hover:hover {
-            border-color: rgba(236, 72, 153, 0.5);
-            box-shadow: 0 0 30px rgba(236, 72, 153, 0.25);
-            transform: translateY(-4px);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="min-h-screen relative flex flex-col selection:bg-brand-500 selection:text-white">
 
+    <div id="progress"></div>
+    <div class="hearts" id="hearts" aria-hidden="true"></div>
     <!-- Ambient Glowing Orbs -->
     <div class="glow-bg -top-48 -left-48"></div>
     <div class="glow-bg top-1/3 -right-48"></div>
@@ -85,6 +70,7 @@
                     <span class="block text-[10px] tracking-widest text-brand-400 font-bold uppercase">Acesso Exclusivo &bull; +18</span>
                 </div>
             </div>
+            <nav class="hidden md:flex items-center gap-6 mr-4"><a class="nav-link" href="#sobre">Sobre</a><a class="nav-link" href="#planos">Planos</a><a class="nav-link" href="#como-funciona">Como funciona</a><a class="nav-link" href="#faq">Dúvidas</a></nav>
             <a href="#planos" class="bg-brand-600 hover:bg-brand-500 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-all duration-300 shadow-neon flex items-center space-x-2">
                 <i class="fa-solid fa-bolt text-xs"></i>
                 <span>Ver Planos</span>
@@ -97,6 +83,10 @@
 
         <!-- Hero Section -->
         <section class="text-center space-y-8 relative py-6">
+            <div class="banner-wrap" id="banner" hidden>
+                <img id="img-banner" src="assets/img/banner.jpg" alt="Banner VIP da Nicolly" width="1600" height="700" fetchpriority="high"
+                     onload="document.getElementById('banner').hidden=false" onerror="this.parentElement.remove()">
+            </div>
             <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-brand-900/50 border border-brand-500/30 text-brand-300 text-xs sm:text-sm font-semibold tracking-wide shadow-inner">
                 <span class="w-2.5 h-2.5 rounded-full bg-brand-500 animate-ping"></span>
                 <span>Canal Oficial de Conteúdo Privado</span>
@@ -106,7 +96,7 @@
                 <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight drop-shadow-md">
                     VIP DA NICOLLY <span class="text-brand-500 inline-block animate-pulse">❤️</span>
                 </h1>
-                <p class="text-base sm:text-xl text-gray-300 font-normal leading-relaxed">
+                <p data-hero class="text-base sm:text-xl text-gray-300 font-normal leading-relaxed">
                     Um espaço exclusivo, íntimo e dedicado para quem deseja acompanhar meus conteúdos especiais, bastidores diários e conversas diretas.
                 </p>
             </div>
@@ -120,6 +110,24 @@
                     <span>VER PLANOS VIP</span>
                     <i class="fa-solid fa-arrow-down text-sm"></i>
                 </a>
+            </div>
+        </section>
+
+        <!-- Sobre / Foto da pessoa -->
+        <section id="sobre" class="reveal glass-card rounded-3xl p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-8">
+            <div class="profile-ring shrink-0">
+                <img id="img-perfil" src="assets/img/perfil.jpg" alt="Foto de perfil da Nicolly" width="170" height="170" loading="lazy"
+                     onerror="this.outerHTML='<div class=&quot;avatar-fallback&quot;><i class=&quot;fa-solid fa-heart&quot;></i></div>'">
+            </div>
+            <div class="text-center sm:text-left space-y-4">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Conheça a Nicolly ❤️</h2>
+                <p class="text-gray-300 leading-relaxed">Aqui você encontra um espaço íntimo, com conteúdos exclusivos, bastidores e conversas diretas. Tudo organizado em um grupo privado, com atendimento rápido.</p>
+                <div class="grid sm:grid-cols-2 gap-3 pt-2">
+                    <div class="trust-item"><i class="fa-solid fa-shield-heart"></i>Pagamento pelo Mercado Pago</div>
+                    <div class="trust-item"><i class="fa-brands fa-whatsapp"></i>Grupo privado no WhatsApp</div>
+                    <div class="trust-item"><i class="fa-solid fa-bolt"></i>Liberação após conferir o comprovante</div>
+                    <div class="trust-item"><i class="fa-solid fa-lock"></i>Discrição e privacidade</div>
+                </div>
             </div>
         </section>
 
@@ -148,7 +156,7 @@
                         <div class="py-4 border-y border-brand-border/40">
                             <div class="flex items-baseline space-x-1">
                                 <span class="text-sm font-semibold text-gray-400">R$</span>
-                                <span class="text-4xl font-extrabold text-white tracking-tight">25,00</span>
+                                <span class="text-4xl font-extrabold text-white tracking-tight" data-plan-price="semanal">25,00</span>
                             </div>
                             <span class="text-[11px] text-gray-400 block mt-1">Renovação opcional</span>
                         </div>
@@ -159,8 +167,8 @@
                         </ul>
                     </div>
                     <div class="pt-8">
-                        <a href="https://mpago.la/1QU2TPC" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-center block transition-all duration-300 shadow-neon text-sm flex items-center justify-center space-x-2">
-                            <span>PAGAR R$ 25,00</span>
+                        <a target="_blank" rel="noopener noreferrer" data-plan-link="semanal" href="https://mpago.la/1QU2TPC" class="w-full py-4 px-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-center block transition-all duration-300 shadow-neon text-sm flex items-center justify-center space-x-2">
+                            <span data-plan-label="semanal">PAGAR R$ 25,00</span>
                             <i class="fa-solid fa-external-link-alt text-xs"></i>
                         </a>
                     </div>
@@ -183,7 +191,7 @@
                         <div class="py-4 border-y border-brand-border/60">
                             <div class="flex items-baseline space-x-1">
                                 <span class="text-sm font-semibold text-gray-400">R$</span>
-                                <span class="text-4xl font-extrabold text-white tracking-tight">50,00</span>
+                                <span class="text-4xl font-extrabold text-white tracking-tight" data-plan-price="mensal">50,00</span>
                             </div>
                             <span class="text-[11px] text-brand-300 block mt-1">Melhor custo-benefício</span>
                         </div>
@@ -194,8 +202,8 @@
                         </ul>
                     </div>
                     <div class="pt-8">
-                        <a href="https://mpago.la/1xxrBfv" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-4 rounded-xl bg-gradient-to-r from-brand-500 to-pink-500 hover:from-brand-600 hover:to-pink-600 text-white font-bold text-center block transition-all duration-300 shadow-neon-lg text-sm flex items-center justify-center space-x-2">
-                            <span>PAGAR R$ 50,00</span>
+                        <a target="_blank" rel="noopener noreferrer" data-plan-link="mensal" href="https://mpago.la/1xxrBfv" class="w-full py-4 px-4 rounded-xl bg-gradient-to-r from-brand-500 to-pink-500 hover:from-brand-600 hover:to-pink-600 text-white font-bold text-center block transition-all duration-300 shadow-neon-lg text-sm flex items-center justify-center space-x-2">
+                            <span data-plan-label="mensal">PAGAR R$ 50,00</span>
                             <i class="fa-solid fa-external-link-alt text-xs"></i>
                         </a>
                     </div>
@@ -215,7 +223,7 @@
                         <div class="py-4 border-y border-brand-border/40">
                             <div class="flex items-baseline space-x-1">
                                 <span class="text-sm font-semibold text-gray-400">R$</span>
-                                <span class="text-4xl font-extrabold text-white tracking-tight">200,00</span>
+                                <span class="text-4xl font-extrabold text-white tracking-tight" data-plan-price="vitalicio">200,00</span>
                             </div>
                             <span class="text-[11px] text-gray-400 block mt-1">Pagamento único definitivo</span>
                         </div>
@@ -226,8 +234,8 @@
                         </ul>
                     </div>
                     <div class="pt-8">
-                        <a href="https://mpago.la/2PLqPsy" target="_blank" rel="noopener noreferrer" class="w-full py-4 px-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-center block transition-all duration-300 shadow-neon text-sm flex items-center justify-center space-x-2">
-                            <span>PAGAR R$ 200,00</span>
+                        <a target="_blank" rel="noopener noreferrer" data-plan-link="vitalicio" href="https://mpago.la/2PLqPsy" class="w-full py-4 px-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-center block transition-all duration-300 shadow-neon text-sm flex items-center justify-center space-x-2">
+                            <span data-plan-label="vitalicio">PAGAR R$ 200,00</span>
                             <i class="fa-solid fa-external-link-alt text-xs"></i>
                         </a>
                     </div>
@@ -237,7 +245,7 @@
         </section>
 
         <!-- Como Funciona (6 Steps) -->
-        <section class="space-y-8 py-6">
+        <section id="como-funciona" class="space-y-8 py-6">
             <div class="text-center space-y-3">
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Como Funciona o Acesso VIP</h2>
                 <p class="text-gray-400 text-sm max-w-md mx-auto">Siga o passo a passo simples para garantir sua entrada imediata no grupo exclusivo.</p>
@@ -312,11 +320,11 @@
             </div>
 
             <div class="pt-2">
-                <a href="https://wa.me/554192387993?text=Ol%C3%A1%21%20Fiz%20o%20pagamento%20do%20meu%20plano%20VIP%20e%20gostaria%20de%20enviar%20o%20comprovante." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-xl shadow-emerald-900/40 transition-all duration-300 transform hover:-translate-y-1">
+                <a target="_blank" rel="noopener noreferrer" data-wa="msg" href="https://wa.me/554192387993?text=Ol%C3%A1%21%20Fiz%20o%20pagamento%20do%20meu%20plano%20VIP%20e%20gostaria%20de%20enviar%20o%20comprovante." class="inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-xl shadow-emerald-900/40 transition-all duration-300 transform hover:-translate-y-1">
                     <i class="fa-brands fa-whatsapp text-xl"></i>
                     <span>ENVIAR COMPROVANTE PELO WHATSAPP</span>
                 </a>
-                <span class="block text-xs text-gray-400 mt-3 font-medium">Atendimento rápido e seguro • (41) 9238-7993</span>
+                <span class="block text-xs text-gray-400 mt-3 font-medium">Atendimento rápido e seguro • <span data-wa-label>(41) 9238-7993</span></span>
             </div>
         </section>
 
@@ -324,6 +332,21 @@
         <section class="glass-card p-6 rounded-2xl text-center text-xs sm:text-sm text-gray-400 space-y-2">
             <p class="font-semibold text-gray-300"><i class="fa-solid fa-shield-halved text-brand-500 mr-2"></i>Grupo Privado do WhatsApp</p>
             <p>O acesso aos conteúdos exclusivos é disponibilizado em grupo fechado, com liberação estritamente após a conferência e aprovação do comprovante enviado pelo WhatsApp.</p>
+        </section>
+
+    <!-- FAQ -->
+        <section id="faq" class="reveal space-y-6">
+            <div class="text-center space-y-2">
+                <h2 class="text-3xl font-extrabold text-white">Perguntas Frequentes</h2>
+                <p class="text-gray-400">Tire suas dúvidas antes de assinar.</p>
+            </div>
+            <div class="space-y-3">
+                <details class="faq-item"><summary>Como recebo o acesso depois de pagar?</summary><p>Após o pagamento no Mercado Pago, clique no botão de WhatsApp, envie o comprovante e aguarde a conferência. Em seguida você recebe as instruções e o convite para o grupo VIP.</p></details>
+                <details class="faq-item"><summary>O pagamento é seguro?</summary><p>Sim. O pagamento é feito dentro do Mercado Pago, e nenhum dado de cartão passa por este site.</p></details>
+                <details class="faq-item"><summary>Qual a diferença entre os planos?</summary><p>O Semanal dura 7 dias, o Mensal dura 30 dias e o Vitalício é pagamento único, sem mensalidades.</p></details>
+                <details class="faq-item"><summary>Quanto tempo leva para liberar?</summary><p>A liberação acontece depois da conferência do comprovante pelo WhatsApp. Quanto antes você enviar, mais rápido será.</p></details>
+                <details class="faq-item"><summary>O conteúdo é para qualquer idade?</summary><p>Não. O acesso é exclusivo para maiores de 18 anos.</p></details>
+            </div>
         </section>
 
     </main>
@@ -334,10 +357,28 @@
             <span class="font-bold text-gray-300">VIP DA NICOLLY</span>
             <span class="text-brand-500">❤️</span>
         </div>
+        <p class="mb-2"><a class="nav-link" href="termos.html">Termos de Uso</a> &nbsp;•&nbsp; <a class="nav-link" href="privacidade.html">Política de Privacidade</a></p>
         <p>Acesso exclusivo • Conteúdo especial • Grupo privado no WhatsApp.</p>
         <p class="text-red-400 font-semibold tracking-wider pt-2">CONTEÚDO DESTINADO EXCLUSIVAMENTE PARA MAIORES DE 18 ANOS (+18)</p>
         <p class="pt-4 text-gray-600">&copy; 2026 VIP da Nicolly. Todos os direitos reservados.</p>
     </footer>
 
+
+    <a class="float-wa" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" data-wa="plain" href="https://wa.me/554192387993"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="admin.html" class="admin-tab" rel="nofollow" title="Área dos administradores">Admin</a>
+    <button id="to-top" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></button>
+    <!-- Verificação de idade -->
+    <div id="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title">
+        <div class="glass-card rounded-3xl p-8 max-w-md text-center space-y-5">
+            <div class="text-5xl">🔞</div>
+            <h2 id="age-title" class="text-2xl font-extrabold text-white">Conteúdo +18</h2>
+            <p class="text-gray-300 text-sm">Este site é destinado exclusivamente a maiores de 18 anos. Você confirma que tem 18 anos ou mais?</p>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button id="age-yes" class="flex-1 bg-brand-600 hover:bg-brand-500 text-white font-bold py-3 rounded-xl shadow-neon">Sim, tenho 18+</button>
+                <a href="https://www.google.com" class="flex-1 border border-brand-border text-gray-300 font-semibold py-3 rounded-xl hover:bg-white/5">Sair</a>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

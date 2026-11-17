@@ -1,81 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Admin | VIP da Nicolly</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="admin.css">
-</head>
-<body>
-<!-- LOGIN -->
-<main id="login" class="box center">
-  <h1>🔒 Área dos administradores</h1>
-  <form id="login-form" autocomplete="off">
-    <label>Usuário<input id="u" type="text" autocapitalize="none" required></label>
-    <label>Senha<input id="p" type="password" inputmode="numeric" required></label>
-    <button class="btn" type="submit">Entrar</button>
-    <p id="login-msg" class="msg"></p>
-  </form>
-  <a class="back" href="./">← Voltar ao site</a>
-</main>
-
-<!-- PAINEL -->
-<div id="panel" hidden>
-  <header class="bar"><strong>⚙️ Painel Admin</strong><span><a href="./" target="_blank">Ver site</a> · <button id="logout" class="link">Sair</button></span></header>
-  <div class="wrap">
-
-    <section class="box">
-      <h2>1. Conexão com o GitHub <small>(uma vez só)</small></h2>
-      <p class="hint">Para o painel salvar as mudanças no site, ele precisa de um <b>token</b> do GitHub. Veja o passo a passo no fim da página. O token fica salvo só neste navegador.</p>
-      <div class="grid">
-        <label>Usuário do GitHub<input id="gh-owner" placeholder="seu-usuario"></label>
-        <label>Nome do repositório<input id="gh-repo" placeholder="nome-do-repo"></label>
-        <label>Branch<input id="gh-branch" value="main"></label>
-        <label>Token<input id="gh-token" type="password" placeholder="github_pat_..."></label>
-      </div>
-      <button class="btn" id="gh-save">Salvar conexão</button> <button class="btn ghost" id="gh-test">Testar</button>
-      <p id="gh-msg" class="msg"></p>
-    </section>
-
-    <section class="box">
-      <h2>2. Textos, preços e links</h2>
-      <label>Texto de apresentação<textarea id="f-hero" rows="3"></textarea></label>
-      <div class="grid">
-        <label>WhatsApp (só números, com 55)<input id="f-wa" inputmode="numeric"></label>
-        <label>WhatsApp como aparece<input id="f-wa-label"></label>
-      </div>
-      <label>Mensagem automática do WhatsApp<input id="f-msg"></label>
-      <h3>Planos</h3>
-      <div class="plan"><b>Semanal</b><input id="p-semanal-preco" placeholder="25,00"><input id="p-semanal-link" placeholder="link Mercado Pago"></div>
-      <div class="plan"><b>Mensal</b><input id="p-mensal-preco" placeholder="50,00"><input id="p-mensal-link" placeholder="link Mercado Pago"></div>
-      <div class="plan"><b>Vitalício</b><input id="p-vitalicio-preco" placeholder="200,00"><input id="p-vitalicio-link" placeholder="link Mercado Pago"></div>
-      <button class="btn" id="save-content">Salvar e publicar</button>
-      <p id="content-msg" class="msg"></p>
-    </section>
-
-    <section class="box">
-      <h2>3. Fotos</h2>
-      <div class="grid">
-        <div><h3>Banner (topo)</h3><img id="prev-banner" class="prev wide" alt=""><input type="file" id="file-banner" accept="image/*"><button class="btn" data-up="banner">Enviar banner</button> <button class="btn ghost" data-del="banner">Remover</button></div>
-        <div><h3>Foto de perfil</h3><img id="prev-perfil" class="prev round" alt=""><input type="file" id="file-perfil" accept="image/*"><button class="btn" data-up="perfil">Enviar foto</button> <button class="btn ghost" data-del="perfil">Remover</button></div>
-      </div>
-      <p id="img-msg" class="msg"></p>
-      <p class="hint">As fotos são ajustadas automaticamente (banner 1600x700, perfil 800x800). O site atualiza em 1 a 2 minutos.</p>
-    </section>
-
-    <section class="box">
-      <h2>Como criar o token (passo a passo)</h2>
-      <ol class="hint">
-        <li>Entre no GitHub → foto do perfil → <b>Settings</b> → <b>Developer settings</b> → <b>Personal access tokens</b> → <b>Fine-grained tokens</b> → <b>Generate new token</b>.</li>
-        <li>Em <b>Repository access</b> escolha <b>Only select repositories</b> e marque só o repositório do site.</li>
-        <li>Em <b>Permissions → Repository permissions</b> coloque <b>Contents: Read and write</b>.</li>
-        <li>Gere, copie o token e cole acima. Quem for administrar precisa do próprio token (ou você gera um para ela).</li>
-      </ol>
-    </section>
-  </div>
-</div>
-<script src="admin.js"></script>
-</body>
-</html>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Painel administrativo | VIP da Nicolly</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="admin.css"></head><body>
+<div id="setup" class="auth-wrap" hidden><section class="auth-card"><span class="eyebrow">CONFIGURAÇÃO INICIAL</span><h1>Criar acesso administrativo</h1><p>Crie um usuário e senha para esta demonstração neste navegador. Isso <b>não protege</b> um site público: os dados ficam no próprio dispositivo e não existe servidor de autenticação.</p><form id="setup-form"><label>Nome<input id="setup-name" required></label><label>Usuário ou e-mail<input id="setup-user" required></label><label>Senha (mínimo 8 caracteres)<input id="setup-pass" type="password" minlength="8" required></label><button class="btn full">Criar acesso local</button><p class="msg" id="setup-msg"></p></form><a href="index.html">← Voltar ao site</a></section></div>
+<div id="login" class="auth-wrap" hidden><section class="auth-card"><span class="eyebrow">VIP DA NICOLLY</span><h1>Painel administrativo</h1><form id="login-form"><label>Usuário/e-mail<input id="admin-user" required></label><label>Senha<input id="admin-pass" type="password" required></label><button class="btn full">Entrar</button><p class="msg" id="login-msg"></p></form><a href="index.html">← Voltar ao site</a></section></div>
+<div id="app" hidden><aside class="sidebar"><a class="brand" href="index.html">♥ VIP NICOLLY</a><div class="side-label">GERENCIAMENTO</div><button class="side-link active" data-tab="overview">▦ Visão geral</button><button class="side-link" data-tab="customers">♙ Clientes</button><button class="side-link" data-tab="payments">＄ Pagamentos</button><button class="side-link" data-tab="settings">⚙ Configurações</button><button class="side-link" data-tab="admins">♧ Administradores</button><div class="side-bottom"><a href="index.html" target="_blank">↗ Ver site</a><button id="logout">Sair da conta</button></div></aside>
+<main class="main"><header class="main-head"><div><span class="eyebrow">CENTRAL DE CONTROLE</span><h1 id="page-title">Visão geral</h1></div><span class="admin-chip" id="admin-label">Administrador</span></header>
+<section class="tab active" id="tab-overview"><div class="stats"><article><span>CLIENTES CADASTRADOS</span><b id="stat-clients">0</b><small>Contas neste navegador</small></article><article><span>PAGAMENTOS APROVADOS</span><b id="stat-paid">0</b><small>Registros manuais</small></article><article><span>RECEITA REGISTRADA</span><b id="stat-revenue">R$ 0,00</b><small>Não é consulta bancária</small></article><article><span>AGUARDANDO CONFERÊNCIA</span><b id="stat-pending">0</b><small>Comprovantes pendentes</small></article></div><div class="panel"><div class="panel-head"><div><h2>Atividade recente</h2><p>Cadastros e pagamentos registrados localmente.</p></div><button class="btn btn-sm" data-go="payments">Ver pagamentos</button></div><div id="recent"></div></div><div class="notice">⚠ <b>Modo demonstração:</b> os dados ficam apenas neste navegador. Não existe autenticação segura, banco de dados compartilhado, confirmação automática de Pix ou webhook Mercado Pago nesta versão.</div></section>
+<section class="tab" id="tab-customers"><div class="panel"><div class="panel-head"><div><h2>Clientes</h2><p>Cadastros feitos neste navegador.</p></div><input id="customer-search" class="search" placeholder="Buscar nome ou e-mail"></div><div class="table-wrap"><table><thead><tr><th>CLIENTE</th><th>CONTATO</th><th>CADASTRO</th><th>SITUAÇÃO</th><th>AÇÕES</th></tr></thead><tbody id="customer-rows"></tbody></table></div></div></section>
+<section class="tab" id="tab-payments"><div class="panel"><div class="panel-head"><div><h2>Pagamentos</h2><p>Registre manualmente a conferência dos comprovantes.</p></div><button class="btn btn-sm" id="new-payment">+ Registrar pagamento</button></div><div class="table-wrap"><table><thead><tr><th>CLIENTE</th><th>PLANO</th><th>VALOR</th><th>DATA</th><th>STATUS</th><th>AÇÕES</th></tr></thead><tbody id="payment-rows"></tbody></table></div></div><div class="notice">Não marque um pagamento como aprovado sem conferir a transação na conta oficial do Mercado Pago. O site não recebe notificações do provedor.</div></section>
+<section class="tab" id="tab-settings"><div class="panel"><h2>Conteúdo e atendimento</h2><p>Altera apenas a cópia local deste navegador; não publica no GitHub.</p><form id="settings-form" class="settings-grid"><label>Texto principal<textarea id="set-hero" rows="3"></textarea></label><label>WhatsApp (somente números, com DDI)<input id="set-wa"></label><label>Mensagem de atendimento<textarea id="set-message" rows="2"></textarea></label><label>Link do convite do grupo VIP<input id="set-group" placeholder="https://chat.whatsapp.com/..."></label><div class="full-row"><h3>Planos e links atuais</h3><div id="plan-fields" class="plan-fields"></div></div><button class="btn">Salvar configurações locais</button><p class="msg" id="settings-msg"></p></form></div></section>
+<section class="tab" id="tab-admins"><div class="panel"><h2>Administradores deste navegador</h2><p>Adicione perfis para demonstração. Não são contas compartilhadas nem seguras para produção.</p><form id="add-admin" class="inline-form"><input id="new-admin-name" placeholder="Nome" required><input id="new-admin-user" placeholder="Usuário/e-mail" required><input id="new-admin-pass" type="password" minlength="8" placeholder="Senha (8+ caracteres)" required><button class="btn">Adicionar</button></form><div id="admin-list"></div></div></section>
+</main></div>
+<div class="modal" id="payment-modal"><div class="modal-card"><button class="x" data-close>×</button><h2>Registrar pagamento</h2><form id="payment-form"><label>Cliente<select id="pay-client" required></select></label><label>Plano<select id="pay-plan"><option value="semanal">Semanal</option><option value="mensal">Mensal</option><option value="vitalicio">Vitalício</option></select></label><label>Valor (R$)<input id="pay-value" required inputmode="decimal"></label><label>Status<select id="pay-status"><option>Pendente</option><option>Aprovado</option><option>Recusado</option></select></label><label>Data<input id="pay-date" type="date" required></label><button class="btn full">Salvar registro</button></form></div></div><script src="admin.js"></script></body></html>
